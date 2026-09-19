@@ -1,0 +1,280 @@
+body {
+    /* menghapus celah bawahan browser */
+    margin: 0;
+    padding: 0;
+    /* tipografi & fallback stack */
+    font-family: Arial, Helvetica, sans-serif;
+    /* warna latar & teks(ergonomis) */
+    background-color: #f5f7fa;
+    color: #333333;
+}
+
+/*=========================================
+ HEADER STYLING
+=========================================*/
+.header {
+    background-color: #0f4c81;  /* Biru Tua Elegan */
+    padding: 30px, 20px;  /* Atas-Bawah 30px, Kiri-Kanan 20px */
+    text-align: center; /* Rata Tengah */
+}
+
+.logo {
+    width: 80px;
+    height: auto; /* BEST PRACTICE: Menjaga aspect ratio */
+}
+
+.site-title {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #ffffff; /* Putih — kontras tinggi di atas biru tua */
+}
+
+.site-tagline {
+    margin: 0;
+    font-size: 16px;
+    color: #dbeafe; /* Biru sangat muda — soft contrast */
+}
+
+/*=========================================
+NAVIGATION STYLING (Episode 16)
+=========================================*/
+/* Wadah navigasi: biru lebih gelap agar beda dari header */
+.navbar {
+    background-color: #083358;
+    padding: 15px, 20px;
+}
+
+/* Induk daftar: normalisasi + FLEXBOX */
+.nav-list {
+    list-style: none;  /* Hapus bullet bawaan */
+    margin: 0; /* Reset margin bawaan */
+    padding: 0; /* Reset padding bawaan */
+    display: flex;  /* 🪄 SAKLAR UTAMA FLEXBOX! */
+    justify-content: center; /* Ratakan menu ke tengah */
+    gap: 30px;  /* Jarak antar menu (presisi) */
+}
+
+/* Item navigasi */
+.nav-item {
+    display: inline-block;
+}
+
+/* Tautan menu */
+.nav-link {
+    color: white;
+    text-decoration: none; /* Hapus garis bawah bawaan */
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s; /* ✨ Animasi halus micro-interaction */
+}
+
+/* Efek hover: kuning hangat (complementary contrast) */ 
+.nav-link:hover {
+    color: #ffd166;
+}
+
+/*=========================================
+HERO SECTION (Episode 17)
+=========================================*/
+.hero {
+    display: flex; /* Layout dua kolom */
+    align-items: center; /* Sejahtara vertikal */
+    justify-content: space-between; /* Ruang di antara */
+    gap: 40px; /* Jarak antar kolom */
+    padding: 60px 8%; /* Ruang dalam (atas-bawah 60px, kiri-kanan 8%) */
+    background-color: #eaf4ff;  /* Biru sangat muda */
+}
+
+.hero-content {
+    flex-direction: 1;
+}
+
+.hero-image {
+    flex-direction: 1;
+}
+
+.hero-img {
+    width: 100%;  /* Ikuti lebar wadah */
+    height: auto; /* Jaga rasio — ANTI GEPENG! */
+    border-radius: 12px;  /* Sudut membulat modern */
+}
+
+.hero-title {
+    font-size: 42px; /* Hierarki visual utama */
+    margin-bottom: 20px; 
+    color: #0f4c81; /* Biru tua */
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;  /* Keterbacaan nyaman */
+    margin-bottom: 25px;
+}
+
+.button-hero {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0f4c81;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Kursor berubah jadi tangan */
+}
+.button-hero:hover {
+    background-color: #083358; /* Efek hover */
+}
+
+/*=========================================
+DESTINASI WISATA - CSS GRID (Episode 18)
+=========================================*/
+.destinasi {
+    padding: 60px 8%;
+    background-color: #ffffff;
+}
+
+.destinasi-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+}
+
+.destinasi-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0 , 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.destinasi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+ 
+.destinasi-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.destinasi-title {
+    font-size: 22px;
+    margin: 16px 20px 8px;
+    color: #0f4c81;
+}
+
+.destinasi-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 20px 16px;
+    color: #64748b;
+}
+
+.tombol-detail {
+    display: inline-block;
+    margin: 0 20px 20px;
+    padding: 10px 20px;
+    background-color: #0f4c81;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+
+}
+
+.tombol-detail:hover {
+    background-color: #083358;
+}
+
+/*=========================================
+MEDIA WISATA (Episode 20)
+=========================================*/
+.media {
+    padding: 60px 8%;  /* Konsisten dengan Destinasi */
+    background-color: #f5f7fa;   /* Konsisten dengan body */
+}
+
+.media-wadah {
+    display: grid; /* 🪄 SAKLAR UTAMA CSS GRID! */
+    grid-template-columns: repeat(2, 1fr);  /* 2 kolom sama besar */
+    gap: 30px; /* Jarak antar kartu */
+} 
+ /* Kartu media — DESIGN SYSTEM KONSISTEN */
+.media-kartu,
+.media-audio,
+.media-video,
+.media-lokasi {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px; /* Sama dengan Destinasi! */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sama dengan Destinasi! */
+}
+
+.media-kartu h3,
+.media-audio h3,
+.media-video h3,
+.media-lokasi h3 {
+    color: #0f4c81;      /* Sama dengan Destinasi! */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.audio {
+    width: 100%; /* Memenuhi lebar kartu */
+}
+
+.video {
+    width: 100%; 
+    height: auto;  /* Jaga rasio aspek — ANTI GEPENG! */
+    border-radius: 10px; /* Sudut membulat */
+}
+.map {
+    width: 100%;
+    height: 350px; /* Tinggi tetap — iframe tidak punya rasio */
+    border: none;     /* Hapus border bawaan iframe */
+    border-radius: 10px;   /* Sudut membulat */
+}
+
+/*=========================================
+KONTAK - FLEXBOX (Episode 21)
+=========================================*/
+.contact {
+    padding: 60px 8%; /* Konsisten dengan section lain */
+    background-color: white; /* Latar putih */
+}
+
+.contact-wadah {
+    display: flex;    /* 🪄 SAKLAR UTAMA FLEXBOX! */
+    justify-content: center; /* Kartu di tengah */
+    align-items: stretch; /* Tinggi sama */
+    gap: 30px;  /* Jarak napas */
+    margin-top: 40px;  /* Jarak dari judul */
+}
+
+.contact-address,
+.contact-phone,
+.contact-email,
+.contact-hours {
+    flex: 1;   /* 🎯 Pembagian ruang ADIL */
+    margin: 0;
+    padding: 25px;
+    background-color: #f5f7fa;  /* Konsisten Design System */
+    border-radius: 12px;   /* Konsisten Design System */
+    text-align: center;
+    line-height: 1.6;   /* Kenyamanan baca */
+}
+
+.contact-phone a,
+.contact-email a {
+    color: #0f4c81;          /* Warna tema SIWA */
+    text-decoration: none;  /* Hapus underline bawaan */
+    font-weight: bold;   /* Tebalkan agar menonjol */
+}
+
+.contact-phone a:hover,
+.contact-email a:hover {
+    color: #083358;          /* Biru lebih gelap saat hover */
+    text-decoration: underline; /* Underline muncul saat hover */
+}
